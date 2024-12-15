@@ -1,0 +1,12 @@
+{% extends 'base_generic.html' %}
+{% block content %}
+  <h1>Lista de Artistas</h1>
+  <a href="{% url 'criar_artista' %}" class="btn btn-primary">Criar Artista</a>
+  <ul>
+    {% for artista in artistas %}
+      <li>
+        <a href="{% url 'ver_artista' pk=artista.pk %}">{{ artista.nome_artistico }}</a>
+      </li>
+    {% endfor %}
+  </ul>
+{% endblock %}
